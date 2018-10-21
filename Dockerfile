@@ -1,27 +1,22 @@
-# FROM ubuntu:latest
-
-# RUN apt-get update -y\
-#   && apt-get install -y python3-pip python3-dev build-essential \
-#   && cd /usr/local/bin \
-#   && ln -s /usr/bin/python3 python \
-#   && pip3 install --upgrade pip
-
-# ADD . /app
-# WORKDIR /app
-
-# RUN pip install -r requirements.txt
-
-# #EXPOSE 5000
-
-# ENTRYPOINT ["python"]
-# CMD ["app.py"]
-
-# # CMD ["/cmd.sh"]
 FROM ubuntu:latest
+
 RUN apt-get update -y
-RUN apt-get install -y python-pip python-dev build-essential
+#Timezone stuff
+RUN apt-get install -y tzdata
+RUN ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime
+RUN dpkg-reconfigure -f noninteractive tzdata
+#Get python 3 for project to run
+RUN apt-get install -y python3 
+RUN apt-get update -y
+RUN apt-get install -y python3-pip python3-dev
+#Get pip3
+RUN pip3 install --upgrade pip
+#Set up directories
 COPY . /app
 WORKDIR /app
-RUN pip install -r requirements.txt
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+#install requirements
+RUN pip3 install -r requirements.txt
+
+ENTRYPOINT ["python3"]
+
+# CMD ["app.py"]

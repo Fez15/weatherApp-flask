@@ -1,8 +1,10 @@
 import requests
 from flask import Flask, render_template, request
-from flask_sqlalchemy import SQLAlchemy
+import flask_monitoringdashboard as dashboard
 
 app = Flask(__name__)
+
+dashboard.bind(app)
 
 
 @app.route('/', methods = ['GET', 'POST'])
@@ -28,4 +30,5 @@ def index():
 
 # run app
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run(host='0.0.0.0', port=8000)

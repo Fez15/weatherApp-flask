@@ -1,0 +1,20 @@
+docker pull jenkins/jenkins
+docker run --name MyJenkins1 -p 8080:8080 -p 5000:5000 -v /home/dale/DevPipeline/jenkins_home:/var/jenkins_home jenkins/jenkins
+get password from set up
+
+flask_monitoringdashboard verson 1.0
+user: admin
+pw: admin
+locahost:5000/dashbaord for the dashboard
+
+
+sudo docker build -t flask-sample:latest .
+sudo docker run -p 8000:8000 --name=flask-app flask-sample
+sudo docker run -p 8000:8000 --name=flask-app flask-sample app.py
+sudo docker run -p 8000:8000 --name=flask-app flask-sample tests.py
+
+sudo docker rm flask-app
+
+sudo docker stop "container name"
+sudo docker rm "container name"
+

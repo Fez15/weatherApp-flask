@@ -1,3 +1,4 @@
 flask==1.0.2
 requests==2.19.1
-flask-sqlalchemy==2.3.2
+flask_monitoringdashboard==2.0.6
+xmlrunner==1.7.7

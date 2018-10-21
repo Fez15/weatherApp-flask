@@ -1,5 +1,6 @@
 from app import app
 import unittest
+import xmlrunner
 
 
 class FlaskTestCase(unittest.TestCase):
@@ -27,4 +28,4 @@ class FlaskTestCase(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(testRunner=xmlrunner.XMLTestRunner(output='test-reports'))
