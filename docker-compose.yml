@@ -1,6 +1,7 @@
-identidock:
+wed:
   build: .
+  container_name: flock
   ports:
-   - "5000:5000"
+   - "8000:8000"
   volumes:
     - .:/app
