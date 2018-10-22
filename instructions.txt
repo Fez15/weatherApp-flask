@@ -17,4 +17,5 @@ sudo docker rm flask-app
 
 sudo docker stop "container name"
 sudo docker rm "container name"
+Looks like I will be trying to use semaphore for the dev pipeline. Sounds like a good idea but git is being weird
 
