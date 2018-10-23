@@ -1,10 +1,10 @@
 import requests
 from flask import Flask, render_template, request
-#import flask_monitoringdashboard as dashboard
+import flask_monitoringdashboard as dashboard
 
 app = Flask(__name__)
 
-#dashboard.bind(app)
+dashboard.bind(app)
 
 
 @app.route('/', methods = ['GET', 'POST'])
