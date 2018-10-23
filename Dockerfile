@@ -14,7 +14,7 @@ RUN pip3 install --upgrade pip
 #Set up directories
 COPY . /app
 WORKDIR /app
-EXPOSE 8000
+EXPOSE 5000
 #install requirements
 RUN pip3 install -r requirements.txt
 
