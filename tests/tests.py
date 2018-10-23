@@ -14,7 +14,7 @@ class FlaskTestCase(unittest.TestCase):
     def test_page_loads(self):
         tester = app.test_client(self)
         response = tester.get('/', content_type='html/text')
-        self.assertTrue(b'Get weather' in response.data)
+        self.assertTrue(b'Get Weather' in response.data)
     
     # Ensure correct result appears
     def test_weather_result(self):
